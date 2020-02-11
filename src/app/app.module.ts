@@ -13,6 +13,7 @@ import { ProductCardComponent } from '@components/product-card/product-card.comp
 import { ProductsService } from '@services/products.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { routeConfig } from './route-config';
+import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { routeConfig } from './route-config';
     ProductDetailsComponent,
     ProductListComponent,
     ProductCardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddToCartButtonComponent
   ],
   imports: [
     BrowserModule,

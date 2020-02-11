@@ -1,0 +1,19 @@
+
+<button 
+    *ngIf="!inCart"
+    (click)="increment()"
+    class="btn btn-primary btn-block">Add to cart</button>
+
+<div class="row" *ngIf="inCart">
+    <div class="col text-center">
+        <button 
+            (click)="decrement()"
+            class="btn btn-danger btn-block">-</button>
+    </div>
+    <div class="col text-center"> {{ quantity }}</div>
+    <div class="col text-center">
+        <button 
+            (click)="increment()"
+            class="btn btn-success btn-block">+</button>
+    </div>
+</div>
