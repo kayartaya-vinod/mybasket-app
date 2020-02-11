@@ -29,12 +29,18 @@ export class ProductsService {
       .map(resp => resp as Product);
   }
 
-  getAllProducts(pageNum = 1): Observable<Product[]> {
+  getAllProducts(pageNum = 1, brand = undefined, category = undefined): Observable<Product[]> {
     const options = {
       params: {
         _page: pageNum.toString()
       }
     };
+    if (brand) {
+      options.params['brand'] = brand;
+    }
+    if (category) {
+      options.params['category'] = category;
+    }
 
     return this.http.get(productsUrl, options)
       .map(resp => resp as Array<Product>);

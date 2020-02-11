@@ -10,7 +10,8 @@ import { ProductsService } from '@services/products.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product = new Product();
+  // declared; but undefined!
+  product:Product;
 
   constructor(private activatedRoute: ActivatedRoute,
     private ps: ProductsService) { }

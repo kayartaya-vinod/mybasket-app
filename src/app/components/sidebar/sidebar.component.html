@@ -1,15 +1,15 @@
 <h3>Products by Brand</h3>
 
-<ul class="list-group">
-    <li *ngFor="let b of brands" class="list-group-item">
+<div class="list-group">
+    <button (click)="getProducts('brand', b)" *ngFor="let b of brands" class="list-group-item">
         {{ b | titlecase }}
-    </li>
-</ul>
+    </button>
+</div>
 
 <h3>Products by Category</h3>
 
-<ul class="list-group">
-    <li *ngFor="let c of categories" class="list-group-item">
+<div class="list-group">
+    <button (click)="getProducts('category', c)" *ngFor="let c of categories" class="list-group-item">
         {{ c | titlecase }}
-    </li>
-</ul>
+    </button>
+</div>
