@@ -1,5 +1,8 @@
 <div class="card">
-    <img [src]="product.picture" class="card-img-top" [alt]="product.description">
+    <img [src]="product.picture" 
+        [routerLink]="['/details', product.id]" 
+        class="card-img-top" [alt]="product.description">
+    
     <div class="card-body">
         <h5 class="card-title">{{ product.description }}</h5>
         <p class="card-text">

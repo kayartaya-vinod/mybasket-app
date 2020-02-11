@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '@components/header/header.component';
@@ -10,6 +11,8 @@ import { ProductDetailsComponent } from '@components/product-details/product-det
 import { ProductListComponent } from '@components/product-list/product-list.component';
 import { ProductCardComponent } from '@components/product-card/product-card.component';
 import { ProductsService } from '@services/products.service';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { routeConfig } from './route-config';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,13 @@ import { ProductsService } from '@services/products.service';
     SidebarComponent,
     ProductDetailsComponent,
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [
     ProductsService

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from '@services/products.service';
 
 @Component({
   selector: 'mb-product-details',
@@ -8,22 +10,17 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product: Product;
+  product = new Product();
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private ps: ProductsService) { }
 
   ngOnInit(): void {
-    this.product = {
-      "id": 25,
-      "category": "fruit",
-      "name": "Orange",
-      "brand": "Fresho",
-      "description": "Orange - Nagpur",
-      "quantity_per_unit": "500 GM, approx. 2 to 3 nos",
-      "unit_price": 16,
-      "picture": "https://vinbasket.herokuapp.com/product-images/10000267-2_8-fresho-orange-nagpur.jpg",
-      "discount": 13
-    }
+    this.activatedRoute.params
+      .subscribe(({ id }) => {
+        this.ps.getProductById(id)
+          .subscribe(p => this.product = p)
+      });
   }
 
 }
