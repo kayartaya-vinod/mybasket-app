@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-sm-6 col-xs-12">
+        <img [src]="product.picture" 
+            class="img img-thumbnail"
+            [alt]="product.description">
+    </div>
+    <div class="col-sm-6 col-xs-12">
+        <table class="table">
+            <tr>
+                <td>Name</td>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>{{ product.category }}</td>
+            </tr>
+            <tr>
+                <td>Brand</td>
+                <td>{{ product.brand }}</td>
+            </tr>
+            <tr>
+                <td>Unit price</td>
+                <td>{{ product.unit_price | currency: 'INR' }}</td>
+            </tr>
+            <tr>
+                <td>Quantity per unit</td>
+                <td>{{ product.quantity_per_unit }}</td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>{{ product.discount }}%</td>
+            </tr>
+        </table>
+        <!-- button.btn.btn-primary.btn-block{Add to cart} -->
+        <button class="btn btn-primary btn-block">Add to cart</button>
+    </div>
+</div>

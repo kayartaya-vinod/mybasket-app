@@ -1,0 +1,4 @@
+/* this one affects only app.component.html */
+.row {
+    min-height: 400px;
+}

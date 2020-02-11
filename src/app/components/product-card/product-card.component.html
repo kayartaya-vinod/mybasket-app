@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="product.picture" class="card-img-top" [alt]="product.description">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.description }}</h5>
+        <p class="card-text">
+            {{ product.unit_price | currency : 'INR'}}
+        </p>
+        <p class="card-text">
+            {{ product.quantity_per_unit}}
+        </p>
+        <p class="card-text">
+            Discount {{ product.discount }}%
+        </p>
+        <button class="btn btn-primary btn-block">Add to cart</button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<h3>Products by Brand</h3>
+
+<ul class="list-group">
+    <li *ngFor="let b of brands" class="list-group-item">
+        {{ b | titlecase }}
+    </li>
+</ul>
+
+<h3>Products by Category</h3>
+
+<ul class="list-group">
+    <li *ngFor="let c of categories" class="list-group-item">
+        {{ c | titlecase }}
+    </li>
+</ul>
