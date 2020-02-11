@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HeaderComponent } from '@components/header/header.component';
+import { FooterComponent } from '@components/footer/footer.component';
+import { SidebarComponent } from '@components/sidebar/sidebar.component';
+import { ProductDetailsComponent } from '@components/product-details/product-details.component';
+import { ProductListComponent } from '@components/product-list/product-list.component';
+import { ProductCardComponent } from '@components/product-card/product-card.component';
+import { ProductsService } from '@services/products.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,12 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     ProductCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
