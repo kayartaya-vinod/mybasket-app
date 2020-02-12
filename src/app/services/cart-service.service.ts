@@ -9,7 +9,30 @@ export class CartServiceService {
 
   cart: Array<LineItem> = [];
 
-  constructor() { }
+  constructor() {
+    let cachedData = localStorage.getItem('cart');
+    if (cachedData) {
+      this.cart = JSON.parse(cachedData);
+    }
+  }
+
+  get itemCount() {
+    return this.cart.length;
+  }
+
+  get cartTotal() {
+    // 1. convert an array of line-items into array of numbers
+    let amounts = this.cart.map((li: LineItem) => {
+      let { product, quantity } = li;
+      return product.unit_price * quantity * (100 - product.discount) / 100;
+    });
+    // 2. use the reduce fuction to get the total amount
+    return amounts.reduce((a, c) => a + c);
+  }
+
+  persist() {
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
 
   incrementQuantity(p: Product) {
     let li = this.cart.find(item => item.product.id === p.id);
@@ -22,6 +45,7 @@ export class CartServiceService {
       li.quantity = 1;
       this.cart.push(li);
     }
+    this.persist();
   }
 
   decrementQuantity(p: Product) {
@@ -32,6 +56,7 @@ export class CartServiceService {
       if (li.quantity === 0) {
         this.cart.splice(index, 1);
       }
+      this.persist();
     }
   }
 

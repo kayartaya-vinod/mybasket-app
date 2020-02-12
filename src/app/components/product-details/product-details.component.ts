@@ -11,7 +11,8 @@ import { ProductsService } from '@services/products.service';
 export class ProductDetailsComponent implements OnInit {
 
   // declared; but undefined!
-  product:Product;
+  product: Product;
+  found: boolean;
 
   constructor(private activatedRoute: ActivatedRoute,
     private ps: ProductsService) { }
@@ -20,7 +21,10 @@ export class ProductDetailsComponent implements OnInit {
     this.activatedRoute.params
       .subscribe(({ id }) => {
         this.ps.getProductById(id)
-          .subscribe(p => this.product = p)
+          .subscribe(
+            p => { this.product = p; this.found = true; },
+            () => this.found = false
+          );
       });
   }
 

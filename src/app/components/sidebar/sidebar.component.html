@@ -1,3 +1,11 @@
+
+<div *ngIf="cs.itemCount">
+    <button class="btn btn-primary btn-block"
+        routerLink="/view-cart">
+        View cart ({{cs.itemCount}} items)
+    </button>
+</div>
+
 <h3>Products by Brand</h3>
 
 <div class="list-group">

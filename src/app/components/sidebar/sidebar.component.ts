@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '@services/products.service';
 import { Router } from '@angular/router';
+import { CartServiceService } from '@services/cart-service.service';
 
 @Component({
   selector: 'mb-sidebar',
@@ -13,7 +14,8 @@ export class SidebarComponent {
   categories: string[];
 
   constructor(ps: ProductsService,
-    private router: Router) {
+    private router: Router,
+    public cs: CartServiceService) {
     ps.brands.subscribe(data => this.brands = data);
     ps.categories.subscribe(data => this.categories = data);
   }

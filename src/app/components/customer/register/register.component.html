@@ -1,0 +1,77 @@
+<h3>New customers, please register here:</h3>
+
+<form class="container">
+    <div class="form-group row">
+        <label for="name" class="col-sm-3">Name</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="name" id="name" [(ngModel)]="c.name">
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label for="email" class="col-sm-3">Email address</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="email" name="email" id="email" [(ngModel)]="c.email">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="phone" class="col-sm-3">Phone number</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="tel" name="phone" id="phone" [(ngModel)]="c.phone">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="street" class="col-sm-3">Street/house no.</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="street" id="street" [(ngModel)]="c.street">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="area" class="col-sm-3">Area/locality</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="area" id="area" [(ngModel)]="c.area">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="city" class="col-sm-3">City</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="city" id="city" [(ngModel)]="c.city">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="state" class="col-sm-3">State</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="state" id="state" [(ngModel)]="c.state">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="pincode" class="col-sm-3">Pincode</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="pincode" id="pincode" [(ngModel)]="c.pincode">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="country" class="col-sm-3">country</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="text" name="country" id="country" [(ngModel)]="c.country">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="password" class="col-sm-3">Password</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="password" name="password" id="password" [(ngModel)]="c.password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="c_password" class="col-sm-3">Confirm password</label>
+        <div class="col-sm-7">
+            <input class="form-control" type="password" name="c_password" id="c_password" [(ngModel)]="c_password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3"></label>
+        <div class="col-sm-7">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>

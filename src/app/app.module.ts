@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '@components/header/header.component';
@@ -14,6 +15,12 @@ import { ProductsService } from '@services/products.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { routeConfig } from './route-config';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
+import { TotalAmountPipe } from './pipes/total-amount.pipe';
+import { LoginComponent } from './components/customer/login/login.component';
+import { RegisterComponent } from './components/customer/register/register.component';
+import { OrdersComponent } from './components/customer/orders/orders.component';
+import { ViewOrderComponent } from './components/customer/view-order/view-order.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +32,19 @@ import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to
     ProductListComponent,
     ProductCardComponent,
     PageNotFoundComponent,
-    AddToCartButtonComponent
+    AddToCartButtonComponent,
+    ViewCartComponent,
+    TotalAmountPipe,
+    LoginComponent,
+    RegisterComponent,
+    OrdersComponent,
+    ViewOrderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    FormsModule,
   ],
   providers: [
     ProductsService

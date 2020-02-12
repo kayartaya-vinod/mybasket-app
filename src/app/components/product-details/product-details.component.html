@@ -2,11 +2,16 @@
 <!-- In a boolean context, following are considered as false: -->
 <!-- undefined, null, 0, '', false -->
 
-<div *ngIf="!product">
+<div class="text-center"
+    *ngIf="product===undefined && found===undefined">
+    <img src="./assets/images/loading.gif" alt="loading">
+</div>
+
+<div *ngIf="found!==undefined && found===false">
     <h3 class="text-danger text-center">No product found!</h3>
 </div>
 
-<div class="row" *ngIf="product">
+<div class="row" *ngIf="found!==undefined && found===true">
     <div class="col-sm-6 col-xs-12">
         <img [src]="product.picture" 
             class="img img-thumbnail"
