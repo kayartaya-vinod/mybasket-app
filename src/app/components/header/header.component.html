@@ -19,7 +19,11 @@
                     class="btn btn-link">Register</button>
             </div>
             <div *ngIf="auth.isAuthenticated">
-                Welcome {{ auth.loggedInUser }} | Logout
+                Welcome {{ auth.loggedInUser }} 
+                | 
+                <button 
+                    (click)="auth.logout()"
+                    class="btn btn-link">Logout</button>
             </div>
 
         </div>
