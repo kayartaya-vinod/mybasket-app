@@ -9,5 +9,5 @@ export class Customer {
     state: string;
     pincode: string;
     country: string;
-    password: string;
+    password: string = '';
 }

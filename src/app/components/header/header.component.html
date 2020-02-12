@@ -1,4 +1,28 @@
 <!-- .alert.alert-primary>h1{MyBasket 1.0} -->
 <div class="alert alert-primary">
-    <h1><span class="clickable" routerLink="/">MyBasket v1.0</span></h1>
+    
+    
+
+    <div class="row">
+        <div class="col">
+            <h1><span class="clickable" routerLink="/">MyBasket v1.0</span></h1>
+        </div>
+        <div class="col text-right">
+
+            <div *ngIf="!auth.isAuthenticated">
+                <button 
+                    routerLink="/customer/login"
+                    class="btn btn-link">Login</button>
+                |
+                <button 
+                    routerLink="/customer/register"
+                    class="btn btn-link">Register</button>
+            </div>
+            <div *ngIf="auth.isAuthenticated">
+                Welcome {{ auth.loggedInUser }} | Logout
+            </div>
+
+        </div>
+    </div>
+
 </div>
