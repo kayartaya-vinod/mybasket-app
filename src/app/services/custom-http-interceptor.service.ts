@@ -13,7 +13,7 @@ export class CustomHttpInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const headers = new HttpHeaders(
-      { Authorization: 'Bearer ' +this.auth.token });
+      { Authorization: 'Bearer ' + this.auth.token });
     // req is immutable, create a clone of that by supplying a
     // new headers object
     const newReq = req.clone({ headers });

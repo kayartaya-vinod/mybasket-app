@@ -1,11 +1,10 @@
 <!-- .alert.alert-primary>h1{MyBasket 1.0} -->
 <div class="alert alert-primary">
-    
-    
-
     <div class="row">
         <div class="col">
-            <h1><span class="clickable" routerLink="/">MyBasket v1.0</span></h1>
+            <h1><span class="clickable" routerLink="/">
+                {{ "header.title" | translate }}
+            </span></h1>
         </div>
         
         <div class="col">
@@ -22,18 +21,18 @@
             <div *ngIf="!auth.isAuthenticated">
                 <button 
                     routerLink="/customer/login"
-                    class="btn btn-link">Login</button>
+                    class="btn btn-link">{{ "header.login" | translate }}</button>
                 |
                 <button 
                     routerLink="/customer/register"
-                    class="btn btn-link">Register</button>
+                    class="btn btn-link">{{ "header.register" | translate }}</button>
             </div>
             <div *ngIf="auth.isAuthenticated">
-                Welcome {{ auth.loggedInUser }} 
+                {{ "header.welcome" | translate }} {{ auth.loggedInUser }} 
                 | 
                 <button 
                     (click)="auth.logout()"
-                    class="btn btn-link">Logout</button>
+                    class="btn btn-link">{{ "header.logout" | translate }}</button>
             </div>
 
         </div>

@@ -14,8 +14,10 @@
         <tr *ngFor="let o of (orders | async) ; index as i">
             <td>{{ i+1 }}</td>
             <td>{{ o.id }}</td>
-            <td>{{ o.orderDate }}</td>
-            <td class="text-right"></td>
+            <td>{{ o.orderDate | date: 'EEEE MMMM d, yyyy' }}</td>
+            <td class="text-right">
+                {{ o | orderTotal | currency: 'INR' }}
+            </td>
             <td>
                 <button class="btn btn-link" 
                     [routerLink]="['/customer/order-details', o.id]">View</button>

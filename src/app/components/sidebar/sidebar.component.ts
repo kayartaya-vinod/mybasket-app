@@ -3,6 +3,7 @@ import { ProductsService } from '@services/products.service';
 import { Router } from '@angular/router';
 import { CartServiceService } from '@services/cart-service.service';
 import { AuthService } from '@services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'mb-sidebar',
@@ -17,6 +18,7 @@ export class SidebarComponent {
   constructor(ps: ProductsService,
     private router: Router,
     public auth: AuthService,
+    public ts: TranslateService,
     public cs: CartServiceService) {
     ps.brands.subscribe(data => this.brands = data);
     ps.categories.subscribe(data => this.categories = data);
@@ -29,4 +31,7 @@ export class SidebarComponent {
     this.router.navigate(['/list'], { queryParams: { [key]: val } });
   }
 
+  changeLang(lang) {
+    this.ts.use(lang);
+  }
 }

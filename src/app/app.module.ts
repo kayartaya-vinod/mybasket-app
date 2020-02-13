@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '@components/header/header.component';
@@ -32,13 +34,19 @@ import { CustomHttpInterceptorService } from '@services/custom-http-interceptor.
     AddToCartButtonComponent,
     ViewCartComponent,
     TotalAmountPipe,
-   
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routeConfig),
     FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        deps: [HttpClient],
+        useFactory: (http) => new TranslateHttpLoader(http)
+      }
+    })
   ],
   providers: [
     ProductsService,

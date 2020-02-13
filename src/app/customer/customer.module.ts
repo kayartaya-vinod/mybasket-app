@@ -6,6 +6,7 @@ import { OrdersComponent } from './components/customer/orders/orders.component';
 import { ViewOrderComponent } from './components/customer/view-order/view-order.component';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { OrderTotalPipe } from './pipes/order-total.pipe';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     OrdersComponent,
-    ViewOrderComponent
+    ViewOrderComponent,
+    OrderTotalPipe
   ],
   exports: [
     LoginComponent,
