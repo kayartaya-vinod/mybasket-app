@@ -24,7 +24,11 @@ export const routeConfig: Routes = [
     },
     {
         path: 'customer',
-        loadChildren: './customer/customer.module#CustomerModule'
+        // works in Angular 8; but not in Angular 9
+        // loadChildren: './customer/customer.module#CustomerModule'
+        // In Angular 9, use the dynamic import function for the same
+        loadChildren: () => import('./customer/customer.module')
+            .then(m => m.CustomerModule)
     },
     {
         // this is the default route; must be the last one

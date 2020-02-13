@@ -17,7 +17,6 @@ import { routeConfig } from './route-config';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { TotalAmountPipe } from './pipes/total-amount.pipe';
-import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,6 @@ import { CustomerModule } from './customer/customer.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CustomerModule,
     RouterModule.forRoot(routeConfig),
     FormsModule,
   ],

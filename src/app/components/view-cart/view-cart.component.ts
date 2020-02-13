@@ -19,8 +19,15 @@ export class ViewCartComponent implements OnInit {
   }
 
   amount(li) {
-    let {product, quantity} = li;
-    return product.unit_price * quantity * ((100-product.discount)/100);
+    let { product, quantity } = li;
+    return product.unit_price * quantity * ((100 - product.discount) / 100);
+  }
+
+  placeOrder() {
+    // check if the user has logged in, 
+    // if yes, place ther order via OrderService
+    // if no, redirect to login page
+    //        post successful login, come back to this page
   }
 
 }
