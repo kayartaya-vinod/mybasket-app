@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.queryParams
-      .subscribe(({ brand, category }) => {
-        this.ps.getAllProducts(1, brand, category)
+      .subscribe(({ brand, category, q }) => {
+        this.ps.getAllProducts(1, brand, category, q)
           .subscribe(data => this.products = data);
       });
 

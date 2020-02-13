@@ -7,6 +7,16 @@
         <div class="col">
             <h1><span class="clickable" routerLink="/">MyBasket v1.0</span></h1>
         </div>
+        
+        <div class="col">
+            <form (submit)="search()">
+                <input type="search" name="qryTxt" 
+                    placeholder="search..."
+                    autofocus
+                    class="form-control" [(ngModel)]="qryTxt">
+            </form>
+        </div>
+
         <div class="col text-right">
 
             <div *ngIf="!auth.isAuthenticated">

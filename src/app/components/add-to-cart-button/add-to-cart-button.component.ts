@@ -19,10 +19,12 @@ export class AddToCartButtonComponent implements OnInit {
 
   increment() {
     this.cs.incrementQuantity(this.product);
+    window['toastr'].success('Item added to cart');
   }
   
   decrement() {
     this.cs.decrementQuantity(this.product);
+    window['toastr'].error('Item removed from cart');
   }
 
   get inCart() {
