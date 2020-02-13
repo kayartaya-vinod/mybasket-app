@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -17,6 +17,7 @@ import { routeConfig } from './route-config';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { TotalAmountPipe } from './pipes/total-amount.pipe';
+import { CustomHttpInterceptorService } from '@services/custom-http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,12 @@ import { TotalAmountPipe } from './pipes/total-amount.pipe';
     FormsModule,
   ],
   providers: [
-    ProductsService
+    ProductsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

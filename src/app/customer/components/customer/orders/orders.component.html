@@ -1,1 +1,25 @@
-<p>orders works!</p>
+<h3>Order history: </h3>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Sl no</th>
+            <th>Order id</th>
+            <th>Order date</th>
+            <th>Order total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of (orders | async) ; index as i">
+            <td>{{ i+1 }}</td>
+            <td>{{ o.id }}</td>
+            <td>{{ o.orderDate }}</td>
+            <td class="text-right"></td>
+            <td>
+                <button class="btn btn-link" 
+                    [routerLink]="['/customer/order-details', o.id]">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
