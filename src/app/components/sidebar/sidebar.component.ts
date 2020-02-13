@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from '@services/products.service';
 import { Router } from '@angular/router';
 import { CartServiceService } from '@services/cart-service.service';
+import { AuthService } from '@services/auth.service';
 
 @Component({
   selector: 'mb-sidebar',
@@ -15,6 +16,7 @@ export class SidebarComponent {
 
   constructor(ps: ProductsService,
     private router: Router,
+    public auth: AuthService,
     public cs: CartServiceService) {
     ps.brands.subscribe(data => this.brands = data);
     ps.categories.subscribe(data => this.categories = data);

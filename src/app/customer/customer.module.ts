@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'view-orders',
+    component: OrdersComponent
   }
 ];
 

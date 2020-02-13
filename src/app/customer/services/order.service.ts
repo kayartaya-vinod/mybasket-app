@@ -19,7 +19,6 @@ export class OrderService {
         'Authorization': 'Bearer ' + this.auth.token
       }
     };
-    ord.customerId = this.auth.userId;
     return this.http.post(ordersUrl, ord, options);
   }
 }

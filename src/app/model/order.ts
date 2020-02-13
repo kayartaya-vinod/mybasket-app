@@ -1,5 +1,4 @@
 import { LineItem } from './line-item';
-import { Customer } from './customer';
 
 export class Order {
     id: number;

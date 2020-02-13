@@ -48,14 +48,6 @@ export class AuthService {
     return 'token' in user;
   }
 
-  get userId() {
-    let user = sessionStorage['user'];
-    if(user) {
-      user = JSON.parse(user);
-      return user['id'];
-    }
-  }
-
   get token() {
     let user = sessionStorage['user'];
     if(user) {

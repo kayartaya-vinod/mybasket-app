@@ -1,3 +1,17 @@
+<div *ngIf="auth.isAuthenticated">
+
+    <div class="list-group">
+        <div class="list-group-item clickable"
+            routerLink="/customer/view-orders">
+            View orders
+        </div>
+        <div class="list-group-item clickable">
+            View profile
+        </div>
+    </div>
+
+</div>
+
 
 <div *ngIf="cs.itemCount">
     <button class="btn btn-primary btn-block"
