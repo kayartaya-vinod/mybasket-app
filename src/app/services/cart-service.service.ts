@@ -20,6 +20,11 @@ export class CartServiceService {
     return this.cart.length;
   }
 
+  emptyCart() {
+    this.cart = [];
+    this.persist();
+  }
+
   get cartTotal() {
     // 1. convert an array of line-items into array of numbers
     let amounts = this.cart.map((li: LineItem) => {
