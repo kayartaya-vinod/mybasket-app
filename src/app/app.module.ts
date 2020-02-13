@@ -17,10 +17,7 @@ import { routeConfig } from './route-config';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { TotalAmountPipe } from './pipes/total-amount.pipe';
-import { LoginComponent } from './components/customer/login/login.component';
-import { RegisterComponent } from './components/customer/register/register.component';
-import { OrdersComponent } from './components/customer/orders/orders.component';
-import { ViewOrderComponent } from './components/customer/view-order/view-order.component';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -35,14 +32,12 @@ import { ViewOrderComponent } from './components/customer/view-order/view-order.
     AddToCartButtonComponent,
     ViewCartComponent,
     TotalAmountPipe,
-    LoginComponent,
-    RegisterComponent,
-    OrdersComponent,
-    ViewOrderComponent
+   
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    CustomerModule,
     RouterModule.forRoot(routeConfig),
     FormsModule,
   ],

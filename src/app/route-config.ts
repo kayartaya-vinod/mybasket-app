@@ -3,8 +3,6 @@ import { ProductListComponent } from '@components/product-list/product-list.comp
 import { ProductDetailsComponent } from '@components/product-details/product-details.component';
 import { PageNotFoundComponent } from '@components/page-not-found/page-not-found.component';
 import { ViewCartComponent } from '@components/view-cart/view-cart.component';
-import { LoginComponent } from '@components/customer/login/login.component';
-import { RegisterComponent } from '@components/customer/register/register.component';
 
 export const routeConfig: Routes = [
     {
@@ -26,21 +24,7 @@ export const routeConfig: Routes = [
     },
     {
         path: 'customer',
-        children: [
-            {
-                path: '',
-                pathMatch: 'full',
-                redirectTo: 'login'
-            },
-            {
-                path: 'login',
-                component: LoginComponent
-            },
-            {
-                path: 'register',
-                component: RegisterComponent
-            }
-        ]
+        loadChildren: './customer/customer.module#CustomerModule'
     },
     {
         // this is the default route; must be the last one
