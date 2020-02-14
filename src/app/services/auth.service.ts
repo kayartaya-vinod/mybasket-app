@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { customersUrl, loginUrl } from 'src/urls';
 
 import 'rxjs/add/operator/do';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
 
   loggedInUser: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     // this is required, in case if you refresh the page
     let user = sessionStorage['user'];
     if (user) {
@@ -32,6 +33,7 @@ export class AuthService {
   logout() {
     this.loggedInUser = undefined;
     sessionStorage.removeItem('user');
+    this.router.navigate(['/customer/login']);
   }
 
   register(customer: Customer): Observable<any> {
