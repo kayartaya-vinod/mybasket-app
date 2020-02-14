@@ -14,7 +14,7 @@
         <tr *ngFor="let o of (orders | async) ; index as i">
             <td>{{ i+1 }}</td>
             <td>{{ o.id }}</td>
-            <td>{{ o.orderDate | date: 'EEEE MMMM d, yyyy' }}</td>
+            <td>{{ o.orderDate | date : 'EEEE d, MMMM yyyy' }}</td>
             <td class="text-right">
                 {{ o | orderTotal | currency: 'INR' }}
             </td>

@@ -1,16 +1,17 @@
 {
     "header": {
-        "title": "My Basket App",
-        "tagline": "Super saver app",
+        "title": "My Basket Application",
         "login": "Login",
         "logout": "Logout",
         "register": "Register",
-        "welcome": "Welcome"
+        "welcome": "Welcome",
+        "search_placeholder": "search..."
     },
     "sidebar": {
-        "by_cat": "Products by category",
+        "view_orders": "View orders",
+        "view_profile": "View/edit profile",
+        "view_cart": "View cart",
         "by_brand": "Products by brand",
-        "view_orders": "Your order history",
-        "view_profile": "View/edit profile"
+        "by_category": "Products by category"
     }
 }

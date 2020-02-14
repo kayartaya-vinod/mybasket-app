@@ -8,6 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(ts: TranslateService) { 
-    ts.setDefaultLang('en'); // base name of our i18n file
+    ts.setDefaultLang('en'); // assets/i18n/en.json
   }
 }

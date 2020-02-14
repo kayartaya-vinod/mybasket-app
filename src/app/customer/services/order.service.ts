@@ -21,4 +21,9 @@ export class OrderService {
   placeOrder(ord: Order): Observable<any> {
     return this.http.post(ordersUrl, ord);
   }
+
+  getOrder(orderId): Observable<Order> {
+    return this.http.get(ordersUrl + orderId)
+      .map(resp => resp as Order);
+  }
 }

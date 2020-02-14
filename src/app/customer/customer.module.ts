@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'view-orders',
     component: OrdersComponent
+  },
+  {
+    path: 'order-details/:order_id',
+    component: ViewOrderComponent
   }
 ];
 
@@ -29,7 +33,7 @@ const routes: Routes = [
     RegisterComponent,
     OrdersComponent,
     ViewOrderComponent,
-    OrderTotalPipe
+    OrderTotalPipe,
   ],
   exports: [
     LoginComponent,

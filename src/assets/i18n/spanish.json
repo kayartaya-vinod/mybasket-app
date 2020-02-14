@@ -1,1 +1,17 @@
-{"header":{"title":"Mi Cesta De La Aplicación","tagline":"Super saver aplicación","login":"Inicio de sesión","logout":"Cierre de sesión","register":"Registro","welcome":"Bienvenido"},"sidebar":{"by_cat":"Productos por categoría","by_brand":"Productos por marca","view_orders":"Su historia de la orden","view_profile":"Ver\/editar perfil"}}
+{
+    "header": {
+        "title": "Mi solicitud de canasta",
+        "login": "Iniciar sesión",
+        "logout": "Cerrar sesión",
+        "register": "Registrarse",
+        "welcome": "Bienvenido",
+        "search_placeholder": "buscar..."
+    },
+    "sidebar": {
+        "view_orders": "Ver pedidos",
+        "view_profile": "Ver / editar perfil",
+        "view_cart": "Ver carrito",
+        "by_brand": "Productos por marca",
+        "by_category": "Productos por categoria"
+    }
+}

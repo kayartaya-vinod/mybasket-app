@@ -1,1 +1,42 @@
-<p>view-order works!</p>
+<div *ngIf="!ord">
+    <img src="./assets/images/loading.gif" alt="loading..">
+</div>
+<div *ngIf="ord">
+    <h3>Order details</h3>
+    <p>Order ID: {{ ord.id }}</p>
+    <p>Order Date: {{ ord.orderDate | date : 'EEEE d, MMMM yyyy' }}</p>
+    <p>Status: {{ ord.status }} </p>
+    <hr>
+    <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Sl no</th>
+                <th>Description</th>
+                <th>Quantity per unit</th>
+                <th>Unit price</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let li of ord.lineItems; index as i">
+                <td>{{ i+1 }}</td>
+                <td>{{ li.product.description }}</td>
+                <td>{{ li.product.quantity_per_unit }}</td>
+                <td class="text-right">{{ li.product.unit_price | currency : 'INR' }}</td>
+                <td>{{ li.quantity }}</td>
+                <td class="text-right">{{ li.product.discount }}%</td>
+                <td class="text-right"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6" class="text-right">Total: </td>
+                <td class="text-right">{{ ord | orderTotal | currency: 'INR' }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <button class="btn btn-primary" (click)="printOrder()">Print...</button>
+</div>

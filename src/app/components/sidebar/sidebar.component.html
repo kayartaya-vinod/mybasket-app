@@ -1,19 +1,17 @@
-<div>
-    <button (click)="changeLang('en')" class="btn btn-link">English</button> |
-    <button (click)="changeLang('spanish')" class="btn btn-link">Spanish</button> |
-    <button (click)="changeLang('kn')" class="btn btn-link">Kannada</button>
+<div class="text-center">
+    <button (click)="changeLnag('en')" class="btn btn-link">English</button> |
+    <button (click)="changeLnag('spanish')" class="btn btn-link">Spanish</button> |
+    <button (click)="changeLnag('kn')" class="btn btn-link">Kannada</button>
 </div>
-
 
 <div *ngIf="auth.isAuthenticated">
 
     <div class="list-group">
-        <div class="list-group-item clickable"
-            routerLink="/customer/view-orders">
-            View orders
+        <div class="list-group-item clickable" routerLink="/customer/view-orders">
+            {{ "sidebar.view_orders" | translate }}
         </div>
         <div class="list-group-item clickable">
-            View profile
+            {{ "sidebar.view_profile" | translate }}
         </div>
     </div>
 
@@ -21,13 +19,12 @@
 
 
 <div *ngIf="cs.itemCount">
-    <button class="btn btn-primary btn-block"
-        routerLink="/view-cart">
-        View cart ({{cs.itemCount}} items)
+    <button class="btn btn-primary btn-block" routerLink="/view-cart">
+        {{ "sidebar.view_cart" | translate }} ({{cs.itemCount}} items)
     </button>
 </div>
 
-<h3>Products by Brand</h3>
+<h3>{{ "sidebar.by_brand" | translate }}</h3>
 
 <div class="list-group">
     <button (click)="getProducts('brand', b)" *ngFor="let b of brands" class="list-group-item">
@@ -35,7 +32,7 @@
     </button>
 </div>
 
-<h3>Products by Category</h3>
+<h3>{{ "sidebar.by_category" | translate }}</h3>
 
 <div class="list-group">
     <button (click)="getProducts('category', c)" *ngFor="let c of categories" class="list-group-item">

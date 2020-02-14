@@ -44,7 +44,7 @@ import { CustomHttpInterceptorService } from '@services/custom-http-interceptor.
       loader: {
         provide: TranslateLoader,
         deps: [HttpClient],
-        useFactory: (http) => new TranslateHttpLoader(http)
+        useFactory: (hc)=>new TranslateHttpLoader(hc)
       }
     })
   ],

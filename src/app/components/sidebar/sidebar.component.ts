@@ -18,7 +18,7 @@ export class SidebarComponent {
   constructor(ps: ProductsService,
     private router: Router,
     public auth: AuthService,
-    public ts: TranslateService,
+    private ts: TranslateService,
     public cs: CartServiceService) {
     ps.brands.subscribe(data => this.brands = data);
     ps.categories.subscribe(data => this.categories = data);
@@ -31,7 +31,8 @@ export class SidebarComponent {
     this.router.navigate(['/list'], { queryParams: { [key]: val } });
   }
 
-  changeLang(lang) {
-    this.ts.use(lang);
+  changeLnag(lang) {
+    this.ts.use(lang); // assets/i18n/{{lang}}.json
   }
+
 }

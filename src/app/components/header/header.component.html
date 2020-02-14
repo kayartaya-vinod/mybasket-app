@@ -2,15 +2,15 @@
 <div class="alert alert-primary">
     <div class="row">
         <div class="col">
-            <h1><span class="clickable" routerLink="/">
-                {{ "header.title" | translate }}
-            </span></h1>
+            <h2><span class="clickable" routerLink="/">
+            {{ "header.title" | translate }}
+            </span></h2>
         </div>
         
         <div class="col">
             <form (submit)="search()">
                 <input type="search" name="qryTxt" 
-                    placeholder="search..."
+                    [placeholder]="'header.search_placeholder' | translate"
                     autofocus
                     class="form-control" [(ngModel)]="qryTxt">
             </form>
