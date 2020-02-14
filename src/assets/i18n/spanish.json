@@ -13,5 +13,8 @@
         "view_cart": "Ver carrito",
         "by_brand": "Productos por marca",
         "by_category": "Productos por categoria"
+    },
+    "login": {
+        "title": "Los clientes existentes inician sesión aquí"
     }
 }

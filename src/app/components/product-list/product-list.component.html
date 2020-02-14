@@ -9,5 +9,8 @@
 <div class="row">
     <mb-product-card [product]="p" class="col-sm-6 col-md-4"
         *ngFor="let p of products"></mb-product-card>
-
 </div>
+
+<button 
+    (click)="loadMore()"
+    class="btn btn-outline-primary btn-block">Load more...</button>

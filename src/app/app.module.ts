@@ -20,6 +20,8 @@ import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { TotalAmountPipe } from './pipes/total-amount.pipe';
 import { CustomHttpInterceptorService } from '@services/custom-http-interceptor.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { CustomHttpInterceptorService } from '@services/custom-http-interceptor.
         deps: [HttpClient],
         useFactory: (hc)=>new TranslateHttpLoader(hc)
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     ProductsService,

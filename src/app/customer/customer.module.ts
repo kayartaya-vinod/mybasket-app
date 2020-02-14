@@ -7,6 +7,9 @@ import { ViewOrderComponent } from './components/customer/view-order/view-order.
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { OrderTotalPipe } from './pipes/order-total.pipe';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -44,7 +47,14 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    TranslateModule.forChild({
+        loader: {
+            provide: TranslateLoader,
+            deps: [HttpClient],
+            useFactory: (http: HttpClient) => new TranslateHttpLoader(http)
+        }
+    })
   ]
 })
 export class CustomerModule { }

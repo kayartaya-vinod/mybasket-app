@@ -13,5 +13,8 @@
         "view_cart": "View cart",
         "by_brand": "Products by brand",
         "by_category": "Products by category"
+    },
+    "login": {
+        "title": "Existing customers login here"
     }
 }
